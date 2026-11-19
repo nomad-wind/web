@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ★編集ポイント①：ブラウザのタブや検索結果に表示されるタイトル・説明文 -->
+  <title>ノマド・ウインド | Nomad Wind — 大空を渡る風のように、自由な音楽の旅へ</title>
+  <meta name="description" content="特定の活動拠点を持たない放浪の民（ノマド）の吹奏楽団「ノマド・ウインド（Nomad Wind / NOMAD WIND）」公式サイト。2026年9月6日 THE FIRST JOURNEY 発足記念コンサートを終え、次なる旅へ。">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nomad: {
+              950: '#173247', // 知的なディープネイビー（見出し・本文強調）
+              900: '#1b5e8a', // 豊かなロイヤル・セルリアンブルー
+              800: '#2779ab', // クリアなオーシャン・スカイブルー
+              700: '#3fa3d0', // 爽やかな風と空のターコイズブルー
+              600: '#64bce0', // 軽やかなライトアクア
+            },
+            skybase: {
+              50: '#f4f9fc',  // 澄んだ空気のオフホワイト背景
+              100: '#e8f3f9', // 淡いアイスブルー
+              200: '#d1e7f3', // ボーダー・バッジ背景
+              300: '#a8d3ea', // アクセントライン
+            },
+            brass: {
+              300: '#f1dca7', // 柔らかなシャンパンゴールド
+              400: '#d6b05c', // 上品なブラスゴールド
+              500: '#c49a45', // 羅針盤・真鍮のゴールド
+              600: '#9c7627', // 視認性の高いダークゴールド
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans JP"', '"Inter"', 'sans-serif'],
+            serif: ['"Shippori Mincho"', 'serif'],
+            display: ['"Cormorant Garamond"', '"Shippori Mincho"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 大空を渡る爽やかな風と朝の光をイメージしたグラデーション背景（外部画像不要） */
+    .sky-hero-bg {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(100, 188, 224, 0.28) 0%, transparent 48%),
+        radial-gradient(circle at 12% 85%, rgba(214, 176, 92, 0.18) 0%, transparent 45%),
+        linear-gradient(135deg, #f4f9fc 0%, #e4f2fa 50%, #f9fcfe 100%);
+    }
+    /* 爽やかなセルリアン〜ターコイズのグラデーションカード */
+    .blue-banner-gradient {
+      background: linear-gradient(135deg, #1b5e8a 0%, #2779ab 55%, #3fa3d0 100%);
+    }
+    /* 五線譜をイメージした繊細なライン背景 */
+    .staff-lines {
+      background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(27, 94, 138, 0.06) 0px,
+        rgba(27, 94, 138, 0.06) 1px,
+        transparent 1px,
+        transparent 16px
+      );
+    }
+    /* 見出し下のブラスゴールドの仕切り線 */
+    .section-divider {
+      width: 64px;
+      height: 2px;
+      background: linear-gradient(90deg, #c49a45, #f1dca7, #c49a45);
+      margin: 0.75rem auto 0;
+    }
+  </style>
+</head>
+<body class="bg-skybase-50 text-nomad-950 font-sans antialiased selection:bg-nomad-600/30 selection:text-nomad-950">
+
+  <!-- =====================================================================
+       1. ヘッダー＆ナビゲーション
+       ===================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md text-nomad-950 border-b border-skybase-200 shadow-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <!-- 楽団ロゴ（チラシ左下バッジに通じる爽やかなブルー＆風・翼モチーフのインラインSVG） -->
+        <a href="#top" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-full blue-banner-gradient border border-brass-400/80 flex items-center justify-center text-white shadow-xs group-hover:scale-105 transition-transform duration-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 13c4-3 8-3 12 0s6 2 5-3" />
+              <path d="M5 18c4-2.5 8-2.5 13 0" />
+              <path d="M13 6c2.5-1.5 5.5-1 7 1.5" />
+            </svg>
+          </div>
+          <div>
+            <span class="block font-serif text-base sm:text-lg font-bold tracking-wider text-nomad-950">
+              ノマド・ウインド
+            </span>
+            <span class="block font-display text-xs font-bold tracking-[0.2em] text-nomad-800">
+              Nomad Wind / NOMAD WIND
+            </span>
+          </div>
+        </a>
+
+        <!-- PC用ナビゲーションメニュー -->
+        <nav class="hidden lg:flex items-center gap-5 text-sm font-medium">
+          <a href="#about" class="text-slate-700 hover:text-nomad-900 transition-colors py-2">楽団紹介</a>
+          <a href="#next-concert" class="text-slate-700 hover:text-nomad-900 transition-colors py-2">次回の演奏会</a>
+          <a href="#history" class="text-slate-700 hover:text-nomad-900 transition-colors py-2">演奏の歴史</a>
+          <a href="#youtube" class="text-slate-700 hover:text-nomad-900 transition-colors py-2">YouTube</a>
+          <a href="#request" class="text-slate-700 hover:text-nomad-900 transition-colors py-2">依頼演奏</a>
+          <a href="#contact" class="ml-1 px-4 py-2.5 rounded-lg bg-nomad-900 hover:bg-nomad-800 text-white font-bold transition-all shadow-xs">
+            お問い合わせ
+          </a>
+        </nav>
+
+        <!-- スマホ用ハンバーガーメニューボタン -->
+        <button id="mobile-menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false"
+                class="lg:hidden p-3 rounded-lg text-nomad-900 hover:bg-skybase-100 focus:outline-none">
+          <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- スマホ用ドロップダウンメニュー -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white/98 border-t border-skybase-200 px-4 pt-2 pb-6 space-y-1 shadow-lg">
+      <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-skybase-100 hover:text-nomad-900">楽団紹介（コンセプト・音楽監督）</a>
+      <a href="#next-concert" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-skybase-100 hover:text-nomad-900">次回の演奏会</a>
+      <a href="#history" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-skybase-100 hover:text-nomad-900">演奏の歴史（THE FIRST JOURNEY）</a>
+      <a href="#youtube" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-skybase-100 hover:text-nomad-900">YouTube / 動画アーカイブ</a>
+      <a href="#request" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-skybase-100 hover:text-nomad-900">依頼演奏の受付</a>
+      <div class="pt-3 px-2">
+        <a href="#contact" class="mobile-nav-link block w-full text-center px-4 py-3 rounded-lg bg-nomad-900 hover:bg-nomad-800 text-white font-bold">
+          お問い合わせ
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       2. ヒーローセクション（爽やかな青空と風のイメージ）
+       ===================================================================== -->
+  <section id="top" class="relative pt-28 pb-20 sm:pt-40 sm:pb-32 overflow-hidden sky-hero-bg text-nomad-950 border-b border-skybase-200">
+    <!-- 五線譜と風・羅針盤のSVG装飾 -->
+    <div class="staff-lines absolute inset-0 opacity-80 pointer-events-none"></div>
+    <svg class="absolute -right-16 top-16 w-[320px] h-[320px] sm:w-[460px] sm:h-[460px] text-nomad-700/[0.10] pointer-events-none" viewBox="0 0 240 240" fill="none" stroke="currentColor" aria-hidden="true">
+      <circle cx="120" cy="120" r="95" stroke-width="1.2" stroke-dasharray="4 6" />
+      <circle cx="120" cy="120" r="65" stroke-width="1" />
+      <path d="M120 15 L120 225 M15 120 L225 120" stroke-width="1" />
+      <polygon points="120,40 132,120 120,200 108,120" stroke-width="1.4" />
+    </svg>
+    <svg class="absolute bottom-0 left-0 right-0 w-full h-24 sm:h-36 text-nomad-700/25 pointer-events-none" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="none" stroke="currentColor" stroke-width="2" d="M0,130 C340,35 720,185 1080,90 C1250,45 1370,75 1440,95" />
+      <path fill="none" stroke="#c49a45" stroke-opacity="0.35" stroke-width="1.3" d="M0,155 C380,65 740,205 1100,115 C1270,70 1385,95 1440,115" />
+    </svg>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- サブコピー -->
+      <p class="font-serif text-sm sm:text-lg text-nomad-800 font-medium tracking-wider mb-4">
+        〜 草原を渡る風のように、自由な音楽の旅へ 〜
+      </p>
+
+      <p class="font-display text-brass-600 font-bold text-xs sm:text-sm tracking-[0.26em] uppercase mb-2">
+        Nomad Wind Ensemble
+      </p>
+
+      <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-nomad-950 mb-4">
+        ノマド・ウインド
+      </h1>
+
+      <p class="font-serif text-base sm:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed mb-5">
+        クラシックからポップスまで、ジャンルを越え、時代を越え、自由に巡る音楽の旅路
+      </p>
+
+      <div class="inline-block px-5 py-2 rounded-full bg-white/90 border border-brass-400/70 text-nomad-950 font-serif text-xs sm:text-sm tracking-wide shadow-2xs mb-9">
+        全力で楽しみ、自由に、真剣に 心に響く音楽を―
+      </div>
+
+      <!-- CTAボタン -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#next-concert" class="w-full sm:w-auto px-8 py-4 rounded-xl blue-banner-gradient hover:opacity-95 text-white font-bold text-base shadow-md transition-all flex items-center justify-center gap-2.5">
+          <i class="fa-solid fa-wind"></i>
+          <span>次回の演奏会（Second Journey）</span>
+        </a>
+        <a href="#request" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/95 hover:bg-white border border-skybase-300 text-nomad-900 font-bold text-base shadow-2xs transition-all flex items-center justify-center gap-2.5">
+          <i class="fa-solid fa-paper-plane text-brass-500"></i>
+          <span>依頼演奏を相談する</span>
+        </a>
+      </div>
+
+      <!-- ファーストジャーニー完了＆次なる旅へのご案内バー -->
+      <div class="mt-12 max-w-3xl mx-auto rounded-2xl bg-white/95 backdrop-blur-md border border-skybase-200 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-left shadow-xs">
+        <div class="flex items-center gap-4">
+          <span class="shrink-0 px-3 py-1 rounded-md bg-nomad-900 text-white text-xs font-bold tracking-wider">LOG</span>
+          <div>
+            <p class="font-serif font-bold text-sm sm:text-base text-nomad-950">
+              2026年9月6日「THE FIRST JOURNEY 発足記念コンサート」終演
+            </p>
+            <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+              特定の拠点を持たない放浪の民として最初の旅を終え、現在「Second Journey」の航路を調整中です。
+            </p>
+          </div>
+        </div>
+        <a href="#history" class="shrink-0 text-xs sm:text-sm font-bold text-nomad-800 hover:text-brass-600 flex items-center gap-1">
+          <span>公演記録を見る</span>
+          <i class="fa-solid fa-chevron-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       3. 楽団紹介（コンセプト・音楽監督 大江 健司の紹介）
+       ===================================================================== -->
+  <section id="about" class="py-20 sm:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="font-display text-brass-600 text-sm font-bold tracking-[0.22em] uppercase">About Nomad Wind</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-nomad-950 mt-1">楽団紹介</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- 左側：放浪の民（ノマド）のコンセプト -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="rounded-3xl bg-gradient-to-br from-skybase-100 via-skybase-50 to-white text-nomad-950 p-7 sm:p-9 shadow-xs border border-skybase-200 relative overflow-hidden">
+            <span class="inline-block text-xs font-display tracking-[0.22em] text-nomad-800 font-bold uppercase mb-2">Nomad Spirit</span>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-nomad-950 leading-snug mb-4">
+              特定の拠点を持たない「放浪の民」。<br>だからこそ、どこへでも風を吹かせる。
+            </h3>
+            <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+              ノマド・ウインドは、決まった本拠地や常設の練習拠点を持たない「放浪の民（ノマド）」の吹奏楽団です。特定の街に留まるのではなく、空と大地を渡る風のように、音楽を求める場所や人、空間へと自ら巡っていきます。
+            </p>
+            <p class="text-slate-700 text-sm sm:text-base leading-relaxed mt-3">
+              クラシックの重厚な響きから、親しみやすいポップスや映画音楽・コレクションまで、ジャンルや時代を越えて自由に旅を続けます。
+            </p>
+            <div class="mt-6 pt-5 border-t border-skybase-200 text-center sm:text-left">
+              <p class="font-serif text-nomad-900 text-sm sm:text-base font-bold">
+                「全力で楽しみ、自由に、真剣に 心に響く音楽を―」
+              </p>
+            </div>
+          </div>
+
+          <!-- 旅の仲間（合流・参加）案内 -->
+          <div class="rounded-2xl bg-skybase-50 p-6 border-l-4 border-nomad-700 shadow-2xs border-y border-r border-skybase-200">
+            <h4 class="font-serif text-base sm:text-lg font-bold text-nomad-950 mb-2 flex items-center gap-2">
+              <i class="fa-solid fa-feather-pointed text-nomad-800"></i>
+              <span>次なる旅への合流・参加について</span>
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              企画・公演ごとに集まり音楽を創り上げるノマド・ウインドでは、次回の旅路（Second Journey以降）にご一緒いただける奏者仲間・スタッフのご相談も受け付けています。ご興味のある方はお問い合わせフォームよりお気軽にご連絡ください。
+            </p>
+          </div>
+        </div>
+
+        <!-- 右側：音楽監督・指揮 大江 健司 プロフィール -->
+        <div class="lg:col-span-6">
+          <div class="rounded-3xl bg-white p-7 sm:p-9 shadow-sm border border-skybase-200">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-skybase-100 border border-skybase-200 text-nomad-900 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-music"></i>
+              </div>
+              <div>
+                <span class="inline-block px-3 py-0.5 rounded-full bg-brass-300/60 border border-brass-400/60 text-nomad-950 text-xs font-bold tracking-wider">
+                  音楽監督・指揮
+                </span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-nomad-950 mt-1">
+                  大江 健司 <span class="text-sm font-sans font-normal text-slate-500 ml-1">Kenji Oe</span>
+                </h3>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-skybase-100 space-y-3.5 text-sm sm:text-base text-slate-700">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-award text-brass-500 mt-1 shrink-0"></i>
+                <p class="font-medium text-nomad-950">
+                  元大阪市音楽団（Osaka Shion W.O.）トロンボーン奏者（1980年〜2017年在籍）
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-award text-brass-500 mt-1 shrink-0"></i>
+                <p>関西トロンボーン協会 常任理事</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-trophy text-brass-500 mt-1 shrink-0"></i>
+                <p>1996年 大阪文化祭賞 受賞</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-trophy text-brass-500 mt-1 shrink-0"></i>
+                <p>1986年 大阪文化祭奨励賞 受賞</p>
+              </div>
+            </div>
+
+            <!-- ★編集ポイント②：音楽監督からのメッセージや追加プロフィールがあればここに追記できます -->
+            <div class="mt-6 rounded-2xl bg-skybase-50 p-4 sm:p-5 border border-skybase-200 text-xs sm:text-sm text-slate-600 leading-relaxed">
+              長年にわたり日本のプロ吹奏楽界の第一線で活躍した経験と豊かな音楽性のもと、ノマド・ウインドの自由で熱い音楽の旅路を導きます。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       4. 次回の演奏会（Second Journey — 旅支度・日程調整中）
+       ===================================================================== -->
+  <section id="next-concert" class="py-20 sm:py-28 bg-skybase-100/70 border-y border-skybase-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="font-display text-brass-600 text-sm font-bold tracking-[0.22em] uppercase">Next Concert</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-nomad-950 mt-1">次回の演奏会</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <!--
+        =====================================================================
+        ★編集ポイント③：【次回演奏会（Second Journey）の詳細差し替えエリア】
+        日程・会場・曲目が決定したら、以下の「航路・日程を調整中」の表示を
+        実際の公演情報に書き換えて公開してください。
+        =====================================================================
+      -->
+      <div class="bg-white rounded-3xl shadow-md border border-skybase-200 overflow-hidden">
+        <div class="blue-banner-gradient text-white p-7 sm:p-10 text-center">
+          <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/15 border border-brass-300/80 text-brass-300 text-xs font-bold tracking-widest mb-4">
+            <i class="fa-solid fa-compass"></i>
+            <span>PLANNING NEXT JOURNEY — 航路・日程を調整中</span>
+          </div>
+          <h3 class="font-serif text-2xl sm:text-4xl font-bold tracking-wide">
+            ノマド・ウインド Second Journey（第2回公演・予定）
+          </h3>
+          <p class="font-serif text-skybase-100 text-sm sm:text-base mt-2.5">
+            2026年9月6日の「THE FIRST JOURNEY」を終え、次の旅先と日程を模索中です。
+          </p>
+        </div>
+
+        <div class="p-6 sm:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-7 space-y-5">
+            <div class="rounded-2xl bg-skybase-50 p-5 sm:p-6 border border-skybase-200">
+              <p class="font-serif text-base sm:text-lg font-bold text-nomad-950 mb-2">
+                現在「Second Journey」に向けて航路・日程を調整中です
+              </p>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                発足記念コンサート「THE FIRST JOURNEY」へお越しいただいた皆さま、温かい応援をありがとうございました。次の旅の目的地（開催地・会場・日程）は現在調整を進めております。決定次第、本サイトおよび公式Instagram・YouTubeにてお知らせいたします。
+              </p>
+            </div>
+
+            <!-- 後日差し替えやすい公演概要枠 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+              <div class="p-4 rounded-xl bg-skybase-50 border border-skybase-200">
+                <span class="block text-xs font-bold text-nomad-800 uppercase tracking-wider mb-1">開催日時</span>
+                <!-- ★決定後に書き換え -->
+                <span class="font-bold text-nomad-950">調整中（決まり次第ご案内）</span>
+              </div>
+              <div class="p-4 rounded-xl bg-skybase-50 border border-skybase-200">
+                <span class="block text-xs font-bold text-nomad-800 uppercase tracking-wider mb-1">開催場所</span>
+                <!-- ★決定後に書き換え -->
+                <span class="font-bold text-nomad-950">未定（拠点を固定せず旅先を検討中）</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 依頼演奏・企画の相談導線 -->
+          <div class="md:col-span-5 bg-skybase-100/90 text-nomad-950 border border-skybase-200 rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5">
+            <div>
+              <span class="text-xs font-display font-bold tracking-[0.2em] text-brass-600 uppercase">Call for Wind</span>
+              <h4 class="font-serif text-lg sm:text-xl font-bold text-nomad-950 mt-1 mb-3">
+                演奏依頼・地域企画のご相談も受付中
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                特定の拠点を持たない放浪の楽団だからこそ、イベントや地域行事、学校・施設での公演など、「あなたの街・企画に呼んでみたい」というご相談も大歓迎です。
+              </p>
+            </div>
+
+            <div class="space-y-3 pt-1">
+              <button type="button" onclick="selectInquiryType('依頼演奏のご相談')"
+                      class="w-full py-3.5 px-5 rounded-xl bg-nomad-900 hover:bg-nomad-800 text-white font-bold text-sm transition-all shadow-xs flex items-center justify-center gap-2">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>依頼演奏・企画を相談する</span>
+              </button>
+              <button type="button" onclick="selectInquiryType('次回公演（Second Journey）の案内希望')"
+                      class="w-full py-3 px-5 rounded-xl bg-white hover:bg-skybase-50 border border-skybase-300 text-nomad-900 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2">
+                <i class="fa-regular fa-bell text-brass-500"></i>
+                <span>次回公演の案内を希望する</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       5. 演奏の歴史（2026年9月6日 THE FIRST JOURNEY 詳細・全7曲）
+       ===================================================================== -->
+  <section id="history" class="py-20 sm:py-28 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="font-display text-brass-600 text-sm font-bold tracking-[0.22em] uppercase">Concert History</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-nomad-950 mt-1">演奏の歴史</h2>
+        <div class="section-divider"></div>
+        <p class="text-slate-600 text-sm sm:text-base mt-4">
+          ノマド・ウインドの最初の旅となった発足記念コンサートの記録です。
+        </p>
+      </div>
+
+      <!-- ★編集ポイント④：今後の演奏会・出演記録が増えた場合は、このカードの上部に順次追加してください -->
+      <article class="bg-white rounded-3xl shadow-md border border-skybase-200 overflow-hidden">
+        <!-- 公演ヘッダー -->
+        <div class="blue-banner-gradient text-white p-6 sm:p-9">
+          <div class="flex flex-wrap items-center gap-2.5 mb-3">
+            <span class="px-3 py-1 rounded-full bg-brass-400 text-nomad-950 text-xs font-bold tracking-wider">
+              2026年9月6日（日）
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/15 text-white text-xs font-medium">
+              発足記念コンサート
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/15 text-brass-300 text-xs font-bold">
+              入場無料
+            </span>
+          </div>
+          <p class="font-display text-brass-300 font-bold text-xs sm:text-sm tracking-[0.2em] uppercase">
+            THE FIRST JOURNEY
+          </p>
+          <h3 class="font-serif text-xl sm:text-3xl font-bold mt-1">
+            Nomad Wind 発足記念コンサート
+          </h3>
+        </div>
+
+        <!-- 公演概要＆プログラム -->
+        <div class="p-6 sm:p-9 grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- 左側：日時・会場・指揮 -->
+          <div class="lg:col-span-5 space-y-5">
+            <div class="rounded-2xl bg-skybase-50 p-5 border border-skybase-200 space-y-4 text-sm">
+              <div>
+                <span class="block text-xs font-bold text-nomad-800 mb-1">日時・入場</span>
+                <p class="font-bold text-nomad-950">2026年9月6日（日）</p>
+                <p class="text-slate-700">開演 14:00（開場 13:30）／入場無料</p>
+              </div>
+
+              <div class="pt-3 border-t border-skybase-200">
+                <span class="block text-xs font-bold text-nomad-800 mb-1">会場</span>
+                <p class="font-bold text-nomad-950">コミュニティプラザ平野（大阪市立平野区民センター）</p>
+                <p class="text-xs text-slate-500 mt-1">※平野区民ホールとは別会場</p>
+              </div>
+
+              <div class="pt-3 border-t border-skybase-200">
+                <span class="block text-xs font-bold text-nomad-800 mb-1">音楽監督・指揮</span>
+                <p class="font-bold text-nomad-950 text-base">大江 健司</p>
+                <p class="text-xs text-slate-600 mt-0.5">元大阪市音楽団（Osaka Shion W.O.）トロンボーン奏者</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右側：PROGRAM Start of an Adventure!（全7曲） -->
+          <div class="lg:col-span-7">
+            <div class="rounded-2xl bg-skybase-50/70 p-5 sm:p-7 border border-skybase-200">
+              <div class="flex flex-wrap items-baseline justify-between gap-2 pb-4 mb-4 border-b border-skybase-200">
+                <h4 class="font-serif text-lg sm:text-xl font-bold text-nomad-950">
+                  PROGRAM
+                </h4>
+                <span class="font-display italic text-nomad-800 text-base sm:text-lg font-bold">
+                  Start of an Adventure!
+                </span>
+              </div>
+
+              <ol class="space-y-3 text-sm sm:text-base">
+                <li class="flex items-start gap-3 pb-2.5 border-b border-skybase-200/80">
+                  <span class="w-6 h-6 rounded-full bg-nomad-900 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+                  <span class="text-nomad-950 font-medium">セカンド・センチュリー / A.リード</span>
+                </li>
+                <li class="flex items-start gap-3 pb-2.5 border-b border-skybase-200/80">
+                  <span class="w-6 h-6 rounded-full bg-nomad-900 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                  <span class="text-nomad-950 font-medium">大草原の歌 / R.ミッチェル</span>
+                </li>
+                <li class="flex items-start gap-3 pb-2.5 border-b border-skybase-200/80">
+                  <span class="w-6 h-6 rounded-full bg-nomad-900 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                  <span class="text-nomad-950 font-medium">アルヴァマー序曲 / J.バーンズ</span>
+                </li>
+                <li class="flex items-start gap-3 pb-2.5 border-b border-skybase-200/80">
+                  <span class="w-6 h-6 rounded-full bg-nomad-900 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">4</span>
+                  <span class="text-nomad-950 font-medium">ジャパニーズ・グラフィティ XIV A・RA・SHI〜Beautiful Days / 編曲：金山 徹</span>
+                </li>
+                <li class="flex items-start gap-3 pb-2.5 border-b border-skybase-200/80">
+                  <span class="w-6 h-6 rounded-full bg-nomad-900 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">5</span>
+                  <span class="text-nomad-950 font-medium">松田聖子コレクション / 編曲：金山 徹</span>
+                </li>
+                <li class="flex items-start gap-3 pb-2.5 border-b border-skybase-200/80">
+                  <span class="w-6 h-6 rounded-full bg-nomad-900 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">6</span>
+                  <span class="text-nomad-950 font-medium">お山ソング・コレクション 〜吹奏岳の為の〜 / 編曲：郷間 幹男</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-full bg-brass-400 text-nomad-950 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">7</span>
+                  <span class="text-nomad-950 font-bold">エル・カミーノ・レアル / A.リード</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       6. YouTube / 動画アーカイブ
+       ===================================================================== -->
+  <section id="youtube" class="py-20 sm:py-28 bg-skybase-100/80 text-nomad-950 border-y border-skybase-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="font-display text-brass-600 text-sm font-bold tracking-[0.22em] uppercase">YouTube &amp; Archive</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-nomad-950 mt-1">YouTube / 動画アーカイブ</h2>
+        <div class="section-divider"></div>
+        <p class="text-slate-600 text-sm sm:text-base mt-4 max-w-2xl mx-auto">
+          発足記念コンサート「THE FIRST JOURNEY」の記録や演奏動画はYouTubeでもご覧いただけます。
+        </p>
+      </div>
+
+      <!-- YouTube動画 2枠レスポンシブグリッド -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- 動画枠1 -->
+        <div class="rounded-2xl overflow-hidden bg-white border border-skybase-200 shadow-sm">
+          <div class="relative w-full aspect-video bg-slate-100">
+            <!--
+              ★編集ポイント⑤：【1本目のYouTube動画ID】
+              YouTubeの動画URL「https://www.youtube.com/watch?v=XXXXXXXXXXX」の
+              「XXXXXXXXXXX」部分を下の src="https://www.youtube.com/embed/【ここ】?rel=0" に差し替えてください。
+            -->
+            <iframe class="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/M7lc1UVf-VE?rel=0"
+                    title="ノマド・ウインド 演奏動画1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+            </iframe>
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-nomad-800 tracking-wider">THE FIRST JOURNEY</span>
+            <!-- ★編集ポイント⑥：1本目の動画タイトル・説明文を書き換え -->
+            <h3 class="font-serif text-base sm:text-lg font-bold text-nomad-950 mt-1">
+              演奏動画アーカイブ①（動画IDを差し替えてください）
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              2026年9月6日 発足記念コンサートの記録や演奏動画を掲載できます。
+            </p>
+          </div>
+        </div>
+
+        <!-- 動画枠2 -->
+        <div class="rounded-2xl overflow-hidden bg-white border border-skybase-200 shadow-sm">
+          <div class="relative w-full aspect-video bg-slate-100">
+            <!--
+              ★編集ポイント⑦：【2本目のYouTube動画ID】
+              下の src="https://www.youtube.com/embed/【ここ】?rel=0" の動画ID部分を差し替えてください。
+            -->
+            <iframe class="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/aqz-KE-bpKQ?rel=0"
+                    title="ノマド・ウインド 演奏動画2"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+            </iframe>
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-nomad-800 tracking-wider">NOMAD WIND ARCHIVE</span>
+            <!-- ★編集ポイント⑧：2本目の動画タイトル・説明文を書き換え -->
+            <h3 class="font-serif text-base sm:text-lg font-bold text-nomad-950 mt-1">
+              演奏動画アーカイブ②（動画IDを差し替えてください）
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              ステージ映像やダイジェスト、リハーサル風景などのリンクにご活用ください。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 公式YouTubeチャンネルへのリンクボタン（★編集ポイント⑨：hrefを実際のYouTubeチャンネルURLに書き換え） -->
+      <div class="mt-12 text-center">
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white hover:bg-skybase-50 border border-skybase-300 text-nomad-950 font-bold text-sm sm:text-base shadow-xs transition-all">
+          <i class="fa-brands fa-youtube text-xl text-red-500"></i>
+          <span>YouTubeチャンネルを開く</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       7. 依頼演奏の受付（出向スタイル・依頼の流れ・相談項目）
+       ===================================================================== -->
+  <section id="request" class="py-20 sm:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="font-display text-brass-600 text-sm font-bold tracking-[0.22em] uppercase">Performance Request</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-nomad-950 mt-1">依頼演奏の受付</h2>
+        <div class="section-divider"></div>
+        <p class="text-slate-600 text-sm sm:text-base mt-4 max-w-2xl mx-auto">
+          特定の活動拠点を持たない「放浪の民」だからこそ、あなたの街・地域・イベント会場へ自ら出向いて演奏します。ホール公演から小規模イベントまで、まずはお気軽にご相談ください。
+        </p>
+      </div>
+
+      <!-- 出向スタイルの活用シーン（3カード） -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-skybase-50/70 rounded-2xl p-6 sm:p-7 shadow-2xs border border-skybase-200">
+          <div class="w-12 h-12 rounded-xl bg-nomad-900 text-white flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-nomad-950 mb-2">地域行事・お祭り・マルシェ</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            地域のイベントや季節の催し、屋外・屋内を問わず出向きます。ポップスや映画音楽、親しみやすい吹奏楽ナンバーで会場を盛り上げます。
+          </p>
+        </div>
+
+        <div class="bg-skybase-50/70 rounded-2xl p-6 sm:p-7 shadow-2xs border border-skybase-200">
+          <div class="w-12 h-12 rounded-xl bg-nomad-800 text-white flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-school"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-nomad-950 mb-2">学校公演・子ども向け企画</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            小中学校や幼稚園・保育園などでの演奏企画。生楽器の迫力や楽しさを届けるプログラムをご相談いただけます。
+          </p>
+        </div>
+
+        <div class="bg-skybase-50/70 rounded-2xl p-6 sm:p-7 shadow-2xs border border-skybase-200">
+          <div class="w-12 h-12 rounded-xl bg-nomad-700 text-white flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-nomad-950 mb-2">各種イベント・式典・特別企画</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            記念行事や交流会、福祉・地域施設での演奏など。会場の広さやご要望に応じて編成・曲目をご相談可能です。
+          </p>
+        </div>
+      </div>
+
+      <!-- 依頼の流れ＆相談時に教えていただきたい項目 -->
+      <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-skybase-200">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- 左側：ご依頼の流れ（4ステップ） -->
+          <div class="lg:col-span-7">
+            <h3 class="font-serif text-xl font-bold text-nomad-950 mb-6">ご依頼の流れ</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="rounded-2xl bg-skybase-50 p-5 border border-skybase-200">
+                <span class="inline-block px-2.5 py-0.5 rounded bg-nomad-900 text-white text-xs font-bold mb-2">STEP 1</span>
+                <h4 class="font-bold text-nomad-950 text-base mb-1">お問い合わせ・ご相談</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">お問い合わせフォームまたはメール（n.wind.2026@gmail.com）よりご連絡ください。</p>
+              </div>
+              <div class="rounded-2xl bg-skybase-50 p-5 border border-skybase-200">
+                <span class="inline-block px-2.5 py-0.5 rounded bg-nomad-800 text-white text-xs font-bold mb-2">STEP 2</span>
+                <h4 class="font-bold text-nomad-950 text-base mb-1">日程・編成・内容のすり合わせ</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">ご希望の開催日・場所・演奏時間・ご予算や諸条件などを踏まえ、実現方法を相談します。</p>
+              </div>
+              <div class="rounded-2xl bg-skybase-50 p-5 border border-skybase-200">
+                <span class="inline-block px-2.5 py-0.5 rounded bg-nomad-700 text-white text-xs font-bold mb-2">STEP 3</span>
+                <h4 class="font-bold text-nomad-950 text-base mb-1">プログラム・当日段取りの確定</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">演奏曲目、搬入経路、控室や譜面台・椅子などの設備条件を確認します。</p>
+              </div>
+              <div class="rounded-2xl bg-skybase-50 p-5 border border-skybase-200">
+                <span class="inline-block px-2.5 py-0.5 rounded bg-brass-400 text-nomad-950 text-xs font-bold mb-2">STEP 4</span>
+                <h4 class="font-bold text-nomad-950 text-base mb-1">現地へ赴き本番演奏</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">ノマド・ウインドが現地へ出向き、心を込めた生演奏をお届けします。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右側：ご相談時にお知らせいただきたい項目 -->
+          <div class="lg:col-span-5 rounded-2xl bg-skybase-100/90 text-nomad-950 border border-skybase-200 p-6 sm:p-7">
+            <h3 class="font-serif text-lg sm:text-xl font-bold text-nomad-950 mb-3">
+              ご相談時にお知らせいただきたい項目
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              決まっている範囲で構いませんので、以下の項目をお知らせいただくとスムーズです。
+            </p>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-regular fa-circle-check text-nomad-800 mt-0.5 shrink-0"></i>
+                <span>ご希望の日時・時間帯（候補日があれば複数）</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-regular fa-circle-check text-nomad-800 mt-0.5 shrink-0"></i>
+                <span>開催場所（都道府県・市区町村・施設名・屋内外の別）</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-regular fa-circle-check text-nomad-800 mt-0.5 shrink-0"></i>
+                <span>イベント・企画の概要と想定されるお客様層</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-regular fa-circle-check text-nomad-800 mt-0.5 shrink-0"></i>
+                <span>ご希望の演奏時間・曲目のイメージ・ご予算感</span>
+              </li>
+            </ul>
+
+            <button type="button" onclick="selectInquiryType('依頼演奏のご相談')"
+                    class="mt-6 w-full py-3.5 px-5 rounded-xl bg-nomad-900 hover:bg-nomad-800 text-white font-bold text-sm transition-all shadow-xs">
+              この内容で依頼演奏を相談する
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       8. お問い合わせ（メール・Instagram・コピー機能・フォーム）
+       ===================================================================== -->
+  <section id="contact" class="py-20 sm:py-28 bg-skybase-100/60 border-t border-skybase-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="font-display text-brass-600 text-sm font-bold tracking-[0.22em] uppercase">Contact</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-nomad-950 mt-1">お問い合わせ</h2>
+        <div class="section-divider"></div>
+        <p class="text-slate-600 text-sm sm:text-base mt-4 max-w-2xl mx-auto">
+          依頼演奏のご相談、次回公演のご案内希望、次なる旅への合流・参加、その他のお問い合わせはフォームまたはメール・Instagramよりご連絡ください。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- 左側：メール＆Instagram連絡先カード -->
+        <div class="lg:col-span-5 space-y-5">
+          <!-- メールカード -->
+          <div class="bg-white rounded-2xl p-6 shadow-xs border border-skybase-200">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-skybase-100 border border-skybase-200 text-nomad-900 flex items-center justify-center">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-bold text-nomad-800 uppercase tracking-wider">E-mail</span>
+                <h3 class="font-serif text-base font-bold text-nomad-950">メールでのお問い合わせ</h3>
+              </div>
+            </div>
+
+            <p class="font-mono text-sm sm:text-base font-bold text-nomad-950 bg-skybase-50 px-3.5 py-2.5 rounded-xl border border-skybase-200 break-all">
+              n.wind.2026@gmail.com
+            </p>
+
+            <div class="mt-4 flex flex-wrap items-center gap-2.5">
+              <a href="mailto:n.wind.2026@gmail.com"
+                 class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-nomad-900 hover:bg-nomad-800 text-white text-xs sm:text-sm font-medium transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                <span>メーラーを開く</span>
+              </a>
+              <button type="button" onclick="copyToClipboard('n.wind.2026@gmail.com', 'メールアドレスをコピーしました。')"
+                      class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-skybase-100 hover:bg-skybase-200 text-nomad-950 text-xs sm:text-sm font-medium transition-colors border border-skybase-200">
+                <i class="fa-regular fa-copy"></i>
+                <span>アドレスをコピー</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Instagramカード -->
+          <div class="bg-white rounded-2xl p-6 shadow-xs border border-skybase-200">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-skybase-100 border border-skybase-200 text-nomad-900 flex items-center justify-center">
+                <i class="fa-brands fa-instagram text-lg"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-bold text-nomad-800 uppercase tracking-wider">Instagram</span>
+                <h3 class="font-serif text-base font-bold text-nomad-950">公式Instagram</h3>
+              </div>
+            </div>
+
+            <p class="font-mono text-sm sm:text-base font-bold text-nomad-950 bg-skybase-50 px-3.5 py-2.5 rounded-xl border border-skybase-200">
+              @n.wind.2026
+            </p>
+
+            <div class="mt-4 flex flex-wrap items-center gap-2.5">
+              <a href="https://www.instagram.com/n.wind.2026/" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brass-400 hover:bg-brass-300 text-nomad-950 text-xs sm:text-sm font-bold transition-colors">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagramを見る</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+              <button type="button" onclick="copyToClipboard('n.wind.2026', 'Instagram ID（n.wind.2026）をコピーしました。')"
+                      class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-skybase-100 hover:bg-skybase-200 text-nomad-950 text-xs sm:text-sm font-medium transition-colors border border-skybase-200">
+                <i class="fa-regular fa-copy"></i>
+                <span>IDをコピー</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側：お問い合わせフォーム -->
+        <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-9 shadow-sm border border-skybase-200">
+          <!--
+            =================================================================
+            ★編集ポイント⑩：【無料サーバーでフォーム送信を受け取る設定】
+            1. Formspree（https://formspree.io/）等で無料フォームを作成し、発行されたURLを
+               下の action="" の中に貼り付けてください（例：action="https://formspree.io/f/xxxxxxx"）。
+            2. Googleフォームを使いたい場合は、この <form> 部分を Googleフォームの
+               「埋め込みHTML（<iframe>）」に差し替えるだけでも運用できます。
+            3. action="" が空欄のままのときは、動作確認用として「送信確認モーダル」が表示されます。
+            =================================================================
+          -->
+          <form id="contact-form" action="" method="POST" class="space-y-5">
+            <div>
+              <label for="sender-name" class="block text-sm font-bold text-nomad-950 mb-1.5">
+                お名前（団体名） <span class="text-red-600">*</span>
+              </label>
+              <input type="text" id="sender-name" name="name" required placeholder="例：山田 太郎 ／ 〇〇イベント実行委員会"
+                     class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-skybase-50/60 text-slate-800 focus:outline-none focus:ring-2 focus:ring-nomad-700 focus:border-nomad-700">
+            </div>
+
+            <div>
+              <label for="sender-email" class="block text-sm font-bold text-nomad-950 mb-1.5">
+                メールアドレス <span class="text-red-600">*</span>
+              </label>
+              <input type="email" id="sender-email" name="email" required placeholder="example@email.com"
+                     class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-skybase-50/60 text-slate-800 focus:outline-none focus:ring-2 focus:ring-nomad-700 focus:border-nomad-700">
+            </div>
+
+            <div>
+              <label for="inquiry-type" class="block text-sm font-bold text-nomad-950 mb-1.5">
+                お問い合わせ種別 <span class="text-red-600">*</span>
+              </label>
+              <select id="inquiry-type" name="inquiry_type" required
+                      class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-skybase-50/60 text-slate-800 focus:outline-none focus:ring-2 focus:ring-nomad-700 focus:border-nomad-700">
+                <option value="依頼演奏のご相談">依頼演奏のご相談</option>
+                <option value="次回公演（Second Journey）の案内希望">次回公演（Second Journey）の案内希望</option>
+                <option value="次なる旅への合流・参加について">次なる旅への合流・参加について</option>
+                <option value="その他のお問い合わせ">その他のお問い合わせ</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="sender-message" class="block text-sm font-bold text-nomad-950 mb-1.5">
+                メッセージ本文 <span class="text-red-600">*</span>
+              </label>
+              <textarea id="sender-message" name="message" rows="5" required
+                        placeholder="・依頼演奏のご相談：ご希望日・場所・イベント概要・演奏時間など&#10;・合流・参加のご相談：担当楽器・ご経験など"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-skybase-50/60 text-slate-800 focus:outline-none focus:ring-2 focus:ring-nomad-700 focus:border-nomad-700"></textarea>
+            </div>
+
+            <div class="pt-1">
+              <button type="submit"
+                      class="w-full py-4 px-6 rounded-xl blue-banner-gradient hover:opacity-95 text-white font-bold text-base shadow-sm transition-all flex items-center justify-center gap-2.5">
+                <i class="fa-regular fa-paper-plane"></i>
+                <span>この内容で送信する</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       9. フッター
+       ===================================================================== -->
+  <footer class="bg-skybase-100 text-slate-700 pt-14 pb-10 border-t border-skybase-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-skybase-200">
+        <div class="text-center md:text-left">
+          <p class="font-serif text-xl font-bold text-nomad-950 tracking-wider">ノマド・ウインド</p>
+          <p class="font-display text-xs text-nomad-800 font-bold tracking-[0.2em] uppercase mt-1">
+            Nomad Wind / NOMAD WIND
+          </p>
+          <p class="text-xs text-slate-600 mt-1.5">
+            全力で楽しみ、自由に、真剣に 心に響く音楽を―
+          </p>
+        </div>
+
+        <!-- SNS・メール・YouTubeリンク＆TOPへ戻るボタン -->
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="https://www.instagram.com/n.wind.2026/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (n.wind.2026)"
+             class="w-11 h-11 rounded-full bg-white hover:bg-brass-300/70 border border-skybase-200 text-nomad-900 flex items-center justify-center transition-colors">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+          <!-- ★編集ポイント⑪：hrefを実際のYouTubeチャンネルURLに書き換え -->
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+             class="w-11 h-11 rounded-full bg-white hover:bg-red-50 border border-skybase-200 text-red-500 flex items-center justify-center transition-colors">
+            <i class="fa-brands fa-youtube text-lg"></i>
+          </a>
+          <a href="mailto:n.wind.2026@gmail.com" aria-label="メールを送る"
+             class="w-11 h-11 rounded-full bg-white hover:bg-brass-300/70 border border-skybase-200 text-nomad-900 flex items-center justify-center transition-colors">
+            <i class="fa-regular fa-envelope text-lg"></i>
+          </a>
+          <a href="#top" aria-label="ページの先頭へ戻る"
+             class="ml-1 px-4 py-2.5 rounded-full bg-white border border-skybase-300 hover:border-nomad-700 text-xs font-medium text-nomad-950 hover:text-nomad-800 transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>TOPへ戻る</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600">
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-5">
+          <a href="#about" class="hover:text-nomad-950">楽団紹介</a>
+          <a href="#next-concert" class="hover:text-nomad-950">次回の演奏会</a>
+          <a href="#history" class="hover:text-nomad-950">演奏の歴史</a>
+          <a href="#youtube" class="hover:text-nomad-950">YouTube</a>
+          <a href="#request" class="hover:text-nomad-950">依頼演奏</a>
+          <a href="#contact" class="hover:text-nomad-950">お問い合わせ</a>
+        </div>
+        <p>&copy; Nomad Wind / ノマド・ウインド</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       通知・確認モーダル（alert()の代替としてコピー通知やフォーム確認に使用）
+       ===================================================================== -->
+  <div id="info-modal" class="hidden fixed inset-0 z-50 bg-nomad-950/50 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-skybase-200">
+      <div class="w-12 h-12 rounded-full bg-skybase-100 text-nomad-900 flex items-center justify-center text-xl mx-auto mb-4">
+        <i id="modal-icon" class="fa-solid fa-check"></i>
+      </div>
+      <h3 id="modal-title" class="font-serif text-xl font-bold text-nomad-950 text-center mb-2">お知らせ</h3>
+      <p id="modal-subtitle" class="text-xs text-slate-500 text-center mb-4 leading-relaxed"></p>
+      <div id="modal-body" class="bg-skybase-50 rounded-xl p-4 text-sm text-slate-700 space-y-2 border border-skybase-200 mb-6 break-words"></div>
+      <button type="button" id="close-modal-btn"
+              class="w-full py-3 rounded-xl bg-nomad-900 hover:bg-nomad-800 text-white font-bold text-sm transition-colors">
+        閉じる
+      </button>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       JavaScript（スマホメニュー・種別自動選択・コピー機能・フォーム確認）
+       ===================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. スマホ用ハンバーガーメニューの開閉
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('mobile-menu-icon');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function toggleMenu() {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-xmark');
+          menuBtn.setAttribute('aria-expanded', 'true');
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      }
+
+      menuBtn.addEventListener('click', toggleMenu);
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (!mobileMenu.classList.contains('hidden')) {
+            toggleMenu();
+          }
+        });
+      });
+
+      // 2. お問い合わせフォームの送信処理（action未設定時は確認モーダルを表示）
+      const contactForm = document.getElementById('contact-form');
+      contactForm.addEventListener('submit', (e) => {
+        const actionUrl = contactForm.getAttribute('action');
+        if (!actionUrl || actionUrl.trim() === '') {
+          e.preventDefault();
+
+          const name = document.getElementById('sender-name').value;
+          const email = document.getElementById('sender-email').value;
+          const type = document.getElementById('inquiry-type').value;
+          const message = document.getElementById('sender-message').value;
+
+          const bodyHtml = `
+            <p><strong class="text-nomad-950">お名前（団体名）：</strong>${escapeHtml(name)}</p>
+            <p><strong class="text-nomad-950">メール：</strong>${escapeHtml(email)}</p>
+            <p><strong class="text-nomad-950">種別：</strong>${escapeHtml(type)}</p>
+            <p><strong class="text-nomad-950">内容：</strong><br>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
+          `;
+
+          openInfoModal({
+            iconClass: 'fa-regular fa-paper-plane',
+            title: '送信内容の確認（デモ表示）',
+            subtitle: '実際にメール送信を受け取るには、HTML内の form action="" にFormspree等のURLを設定してください。',
+            bodyHtml: bodyHtml
+          });
+        }
+      });
+
+      // 3. モーダル閉じる操作
+      const infoModal = document.getElementById('info-modal');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+
+      closeModalBtn.addEventListener('click', () => {
+        infoModal.classList.add('hidden');
+      });
+
+      infoModal.addEventListener('click', (e) => {
+        if (e.target === infoModal) {
+          infoModal.classList.add('hidden');
+        }
+      });
+    });
+
+    // 4. 各セクションのボタンからお問い合わせ種別を自動選択してスクロール
+    function selectInquiryType(typeValue) {
+      const selectEl = document.getElementById('inquiry-type');
+      const contactSection = document.getElementById('contact');
+      if (selectEl) {
+        selectEl.value = typeValue;
+      }
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // 5. クリップボードへのコピー処理（iFrame環境でも動作するフォールバック付き）
+    function copyToClipboard(text, successMessage) {
+      try {
+        const tempInput = document.createElement('textarea');
+        tempInput.value = text;
+        tempInput.setAttribute('readonly', '');
+        tempInput.style.position = 'fixed';
+        tempInput.style.opacity = '0';
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        openInfoModal({
+          iconClass: 'fa-solid fa-check',
+          title: 'コピー完了',
+          subtitle: successMessage,
+          bodyHtml: `<p class="font-mono text-center font-bold text-nomad-950">${escapeHtml(text)}</p>`
+        });
+      } catch (err) {
+        openInfoModal({
+          iconClass: 'fa-regular fa-clipboard',
+          title: '連絡先情報',
+          subtitle: 'お手数ですが以下のテキストを選択してコピーしてください。',
+          bodyHtml: `<p class="font-mono text-center font-bold text-nomad-950">${escapeHtml(text)}</p>`
+        });
+      }
+    }
+
+    // 6. モーダル表示ヘルパー
+    function openInfoModal({ iconClass, title, subtitle, bodyHtml }) {
+      const infoModal = document.getElementById('info-modal');
+      const modalIcon = document.getElementById('modal-icon');
+      const modalTitle = document.getElementById('modal-title');
+      const modalSubtitle = document.getElementById('modal-subtitle');
+      const modalBody = document.getElementById('modal-body');
+
+      modalIcon.className = `fa-solid ${iconClass}`;
+      modalTitle.textContent = title;
+      modalSubtitle.textContent = subtitle || '';
+      modalBody.innerHTML = bodyHtml;
+      infoModal.classList.remove('hidden');
+    }
+
+    // 7. XSS対策用HTMLエスケープ関数
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+</html>
